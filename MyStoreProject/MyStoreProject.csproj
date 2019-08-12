@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.14.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.14.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3A13433-88B7-4A54-BD7F-72C4BEB45795}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyStoreProject</RootNamespace>
+    <AssemblyName>MyStoreProject</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.6\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Application\ApplicationSource.cs" />
+    <Compile Include="Data\Application\ApplicationSourceRepository.cs" />
+    <Compile Include="Data\ShoppingProcess\ShoppingProcess.cs" />
+    <Compile Include="Data\ShoppingProcess\ShoppingProcessRepository.cs" />
+    <Compile Include="Data\SignedUser\SignedUser.cs" />
+    <Compile Include="Data\SignedUser\SignedUserRepository.cs" />
+    <Compile Include="Data\User\User.cs" />
+    <Compile Include="Data\User\UserRepository.cs" />
+    <Compile Include="Logic\AddToCartMethods.cs" />
+    <Compile Include="Logic\LoginMethods.cs" />
+    <Compile Include="Logic\RegisterMethods.cs" />
+    <Compile Include="Logic\SearchAndSortMethods.cs" />
+    <Compile Include="Logic\ShoppingItemMethods.cs" />
+    <Compile Include="Pages\Body\AuthenticationPage\Authentication.cs" />
+    <Compile Include="Pages\Body\AuthenticationPage\CreateAccountPage\CreateAccount.cs" />
+    <Compile Include="Pages\Body\AuthenticationPage\CreateAccountPage\ForgotPassword\ForgotPasswordPage.cs" />
+    <Compile Include="Pages\Body\AuthenticationPage\CreateAccountPage\ForgotPassword\YourAddress.cs" />
+    <Compile Include="Pages\Body\AuthenticationPage\CreateAccountPage\InvalidCreateAccount.cs" />
+    <Compile Include="Pages\Body\AuthenticationPage\CreateAccountPage\YourPersonalInformation.cs" />
+    <Compile Include="Pages\Body\AuthenticationPage\InvalidAuthentication.cs" />
+    <Compile Include="Pages\Body\BlousesPages\BlousesPage.cs" />
+    <Compile Include="Pages\Body\ContactUs\ContactUs.cs" />
+    <Compile Include="Pages\Body\DressesPages\CasualDressesPage.cs" />
+    <Compile Include="Pages\Body\DressesPages\DressesPage.cs" />
+    <Compile Include="Pages\Body\DressesPages\EveningDressesPage.cs" />
+    <Compile Include="Pages\Body\DressesPages\SummerDressesPage.cs" />
+    <Compile Include="Pages\Body\MainPage\HomePage.cs" />
+    <Compile Include="Pages\Body\MainPage\ProductItemFromHomePage.cs" />
+    <Compile Include="Pages\Body\MyAccount\MyAccountPage.cs" />
+    <Compile Include="Pages\Body\MyAccount\MyAddresses\MyAddressesPage.cs" />
+    <Compile Include="Pages\Body\MyAccount\MyCreditSlips\MyCreditSlipsPage.cs" />
+    <Compile Include="Pages\Body\MyAccount\OrderHistory\OrderHistoryPage.cs" />
+    <Compile Include="Pages\Body\MyAccount\PersonalInformation\MyPersonalInformationPage.cs" />
+    <Compile Include="Pages\Body\MyAccount\WishListPages\MyWishListPage.cs" />
+    <Compile Include="Pages\Body\MyAccount\WishListPages\WishListProduct.cs" />
+    <Compile Include="Pages\Body\NavigationModule\CatalogNavigation.cs" />
+    <Compile Include="Pages\Body\ProductCompare\ProductComparison.cs" />
+    <Compile Include="Pages\Body\ProductPage\ModelSendToFriend.cs" />
+    <Compile Include="Pages\Body\ProductPage\ModelWriteReview.cs" />
+    <Compile Include="Pages\Body\ProductPage\ProductPageMain.cs" />
+    <Compile Include="Pages\Body\ProductPage\QuickProductPage.cs" />
+    <Compile Include="Pages\Body\ProductPage\SuccessfullyAddToCart.cs" />
+    <Compile Include="Pages\Body\SearchPages\SearchPage.cs" />
+    <Compile Include="Pages\Body\ShoppingCartPages\AddAddressPage.cs" />
+    <Compile Include="Pages\Body\ShoppingCartPages\DeliveryAddressPage.cs" />
+    <Compile Include="Pages\Body\ShoppingCartPages\PaymentPages\OrdersSummary.cs" />
+    <Compile Include="Pages\Body\ShoppingCartPages\PaymentPages\PaymentPage.cs" />
+    <Compile Include="Pages\Body\ShoppingCartPages\PaymentPages\PaymentProductItems.cs" />
+    <Compile Include="Pages\Body\ShoppingCartPages\ProceedToCheckout.cs" />
+    <Compile Include="Pages\Body\ShoppingCartPages\ShippingPage.cs" />
+    <Compile Include="Pages\Body\ShoppingCartPages\ShoppingCartItem.cs" />
+    <Compile Include="Pages\Body\ShoppingCartPages\ShoppingCart.cs" />
+    <Compile Include="Pages\Body\ShoppingCartPages\UpdateAddressPage.cs" />
+    <Compile Include="Pages\Body\TopsPages\TopsPage.cs" />
+    <Compile Include="Pages\Body\TshirtsPages\ProductItem.cs" />
+    <Compile Include="Pages\Body\TshirtsPages\TshirtsPage.cs" />
+    <Compile Include="Pages\Body\WomenPages\WomenPage.cs" />
+    <Compile Include="Pages\Header\Header.cs" />
+    <Compile Include="Pages\Header\HeaderDresses.cs" />
+    <Compile Include="Pages\Header\HeaderWomen.cs" />
+    <Compile Include="Pages\Header\LoginedUserAccountElement.cs" />
+    <Compile Include="Pages\Header\LowerBar.cs" />
+    <Compile Include="Pages\Header\NavBar.cs" />
+    <Compile Include="Pages\Header\NoLoginedUserAccountElement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\AddToCartTest.cs" />
+    <Compile Include="Tests\LoginTests.cs" />
+    <Compile Include="Tests\MultipleBrowsersTest.cs" />
+    <Compile Include="Tests\RegisterPageTest.cs" />
+    <Compile Include="Tests\SearchAndSortTests.cs" />
+    <Compile Include="Tests\ShoppingItemTest.cs" />
+    <Compile Include="Tools\AExternalReader.cs" />
+    <Compile Include="Tools\Application.cs" />
+    <Compile Include="Tools\BrowserWrapper.cs" />
+    <Compile Include="Tools\CONST.cs" />
+    <Compile Include="Tools\ExcelReader.cs" />
+    <Compile Include="Tools\ListUtils.cs" />
+    <Compile Include="Tools\SearchWebElements\ASearch.cs" />
+    <Compile Include="Tools\SearchWebElements\ISearch.cs" />
+    <Compile Include="Tools\SearchWebElements\ISearchStrategy.cs" />
+    <Compile Include="Tools\SearchWebElements\SearchElement.cs" />
+    <Compile Include="Tools\SearchWebElements\SearchExplicit.cs" />
+    <Compile Include="Tools\SearchWebElements\SearchImplicit.cs" />
+    <Compile Include="Tools\TestRunner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\Footer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="app.config" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Resource\ExistUsers.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\Selenium.Firefox.WebDriver.0.24.0\build\Selenium.Firefox.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Firefox.WebDriver.0.24.0\build\Selenium.Firefox.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.76.0.0\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.76.0.0\build\Selenium.Chrome.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.14.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.14.0\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
+  <Import Project="..\packages\Selenium.Firefox.WebDriver.0.24.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('..\packages\Selenium.Firefox.WebDriver.0.24.0\build\Selenium.Firefox.WebDriver.targets')" />
+  <Import Project="..\packages\Selenium.Chrome.WebDriver.76.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.76.0.0\build\Selenium.Chrome.WebDriver.targets')" />
+</Project>
